@@ -1,14 +1,9 @@
 ---
 export async function getStaticPaths() {
   const posts = Object.values(import.meta.glob('../posts/*.md', {eager: true}))
- return [
-  {params: {tag: "astro"}, props: {posts}},
-  {params: {tag: "success"}, props: {posts}},
-  {params: {tag: "community"}, props: {posts}},
-  {params: {tag: "blogging"}, props: {posts}},
-  {params: {tag: "setbacks"}, props: {posts}},
-  {params: {tag: "learning in public"}, props: {posts}}
- ]
+  const tags = new Set(posts.map((post: any) => post.frontmatter.tags).flat()).values().toArray()
+  return tags.map(tag => ({params: {tag}, props: {posts}}))
+
 }
 
 const { tag } = Astro.params
