@@ -1,15 +1,7 @@
 ---
-const platform = 'github'
-const username = 'maherapp'
-
-import Greeting from './greeting'
+import Navigation from './navigation.astro'
 ---
 
 <footer>
-  <p>
-    Learn more about my projects on <a
-      href={`https://www.${platform}.com/${username}`}>{platform}</a
-    >!
-  </p>
-  <Greeting client:load messages={['Hi', 'Hello', 'Howdy', 'Hey there']} />
+  <Navigation />
 </footer>
