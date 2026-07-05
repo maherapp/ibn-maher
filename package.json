@@ -16,7 +16,9 @@
     "@astrojs/preact": "^5.1.5",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/ts-plugin": "^1.10.9",
+    "@tailwindcss/vite": "^4.3.2",
     "astro": "^6.4.3",
-    "preact": "^10.29.2"
+    "preact": "^10.29.2",
+    "tailwindcss": "^4.3.2"
   }
 }
