@@ -1,7 +1,16 @@
 ---
-const posts = Object.values(import.meta.glob('../posts/*.md', {eager: true}))
-const tags = new Set(posts.map((post: any) => post.frontmatter.tags).flat()).values().toArray()
+const posts = Object.values(import.meta.glob('../posts/*.md', { eager: true }))
+const tags = new Set(posts.map((post: any) => post.frontmatter.tags).flat())
+  .values()
+  .toArray()
 ---
+
 <ul>
-  {tags.map(tag => <li><a href={`/tags/${tag}`}>{tag}</a></li>)}
+  {
+    tags.map((tag) => (
+      <li>
+        <a href={`/tags/${tag}`}>{tag}</a>
+      </li>
+    ))
+  }
 </ul>

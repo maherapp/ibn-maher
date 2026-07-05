@@ -1,5 +1,5 @@
-interface ImportMetaEnv {}
+type ImportMetaEnv = object;
 
-interface ImportMeta {
-  readonly env: ImportMetaEnv
+export interface ImportMeta {
+	readonly env: ImportMetaEnv;
 }
