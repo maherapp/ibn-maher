@@ -1,0 +1,15 @@
+---
+import BaseLayout from '@layouts/base-layout.astro'
+
+const degrees = [
+  "Master's degree in software engineering, university of Mosul, 2023.",
+  'Bechalor’s degree in software engineering, university of mosul, 2023.',
+]
+---
+
+<BaseLayout>
+  <h3 class='capitalize font-medium mb-3'>education</h3>
+  <ul class='list-["-_"] list-inside font-light'>
+    {degrees.map((degree) => <li class='mb-3'>{degree}</li>)}
+  </ul>
+</BaseLayout>
