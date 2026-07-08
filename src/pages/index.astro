@@ -6,39 +6,49 @@ import { publications } from '../data/publications'
 
 <BaseLayout>
   <div class='flex flex-col gap-6'>
-    <section>
-      <h3 class='font-light mb-3'>
-        Hello, I am Mohammed and I work on ML for software engineering.
-      </h3>
-      <ul class='list-["-_"] list-outside font-light ml-3'>
-        <li>Email: maher@uomosul.edu.iq</li>
-        <li>
-          <a href='#' class='inline-flex gap-1 items-center'
-            >CV [PDF] <Link /></a
-          >
-        </li>
-        <li>
-          <a
-            href='https://github.com/maherapp'
-            class='inline-flex gap-1 items-center'
-            target='_blank'>Github <Link /></a
-          >
-        </li>
-        <li>
-          <a
-            href='https://scholar.google.com/citations?user=rg07F78AAAAJ'
-            class='inline-flex gap-1 items-center'
-            target='_blank'>Google Scholar <Link /></a
-          >
-        </li>
-        <li>
-          <a
-            href='https://www.linkedin.com/in/maherapp/'
-            class='inline-flex gap-1 items-center'
-            target='_blank'>LinkedIn <Link /></a
-          >
-        </li>
-      </ul>
+    <section class='flex flex-col-reverse xl:flex-row gap-6'>
+      <div class='grow'>
+        <h3 class='font-light mb-3'>
+          Hello, I am Mohammed and I work on ML for software engineering.
+        </h3>
+        <ul class='list-["-_"] list-outside font-light ml-3'>
+          <li>Email: maher@uomosul.edu.iq</li>
+          <li>
+            <a href='#' class='inline-flex gap-1 items-center'
+              >CV [PDF] <Link /></a
+            >
+          </li>
+          <li>
+            <a
+              href='https://github.com/maherapp'
+              class='inline-flex gap-1 items-center'
+              target='_blank'>Github <Link /></a
+            >
+          </li>
+          <li>
+            <a
+              href='https://scholar.google.com/citations?user=rg07F78AAAAJ'
+              class='inline-flex gap-1 items-center'
+              target='_blank'>Google Scholar <Link /></a
+            >
+          </li>
+          <li>
+            <a
+              href='https://www.linkedin.com/in/maherapp/'
+              class='inline-flex gap-1 items-center'
+              target='_blank'>LinkedIn <Link /></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class='flex items-center justify-center w-ful bg-red'>
+        <img
+          src='
+        profile.jpeg'
+          alt='Mohammed Maher'
+          class='w-64 h-64 xl:w-38 xl:h-38 rounded-full object-contain bg-white'
+        />
+      </div>
     </section>
     <section>
       <h3 class='font-medium mb-3'>About</h3>
@@ -49,6 +59,20 @@ import { publications } from '../data/publications'
         application of IR to empirical software engineering. At the moment I am
         applying for a Fall PhD in Canada with HCED funding.
       </p>
+    </section>
+    <section>
+      <h3 class='font-medium mb-3'>Education</h3>
+      <ul class='list-["-_"] list-outside ml-3 font-light flex flex-col gap-2'>
+        <li>
+          M.Sc. Software Engineering, University of Mosul, 2023. Thesis: ML for
+          software effort and cost estimation on the ISBSG dataset; advisor Dr.
+          Jamal S. Alneamy.
+        </li>
+        <li>
+          B.Sc. Software Engineering, University of Mosul, 2012. Graduated first
+          in class.
+        </li>
+      </ul>
     </section>
     <section>
       <h3 class='font-medium mb-3'>Research Interests</h3>
@@ -67,14 +91,39 @@ import { publications } from '../data/publications'
               <a href={pub.pdf} class='border-b'>
                 {pub.title}
               </a>
-              . <em>{pub.venue}</em>, {pub.year}.
+              . <em>{pub.venue}</em>, {pub.year}. Cited by {pub.citations}.
             </li>
           ))
         }
       </ul>
-      <a href='/publications' class='inline-block mt-3 text-sm border-b'
-        >More details →</a
-      >
+    </section>
+    <section>
+      <h3 class='font-medium mb-3'>Open-source Contributions</h3>
+      <ul class='list-["-_"] list-outside ml-3 font-light'>
+        <li>
+          Contributed onboarding reproduction logs to <a
+            href='https://github.com/castorini'
+            class='border-b'
+            target='_blank'>Castorini</a
+          >'s IR toolkits — merged into <a
+            href='https://github.com/castorini/anserini/pull/3118'
+            class='border-b'
+            target='_blank'>Anserini (#3118)</a
+          > on 2026-02-01 and <a
+            href='https://github.com/castorini/pyserini/pull/2409'
+            class='border-b'
+            target='_blank'>Pyserini (#2409)</a
+          > on 2026-02-07.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3 class='font-medium mb-3'>Teaching</h3>
+      <ul class='list-["-_"] list-outside ml-3 font-light'>
+        <li>
+          Object-Oriented Programming with Python — second-year undergraduates.
+        </li>
+      </ul>
     </section>
   </div>
 </BaseLayout>

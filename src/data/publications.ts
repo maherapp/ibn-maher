@@ -8,6 +8,7 @@ export type Publication = {
   year: number
   doi: string
   link: string
+  citations: number
   finding: string
 }
 
@@ -22,8 +23,8 @@ export const publications: Publication[] = [
     venue: 'ISRITI',
     year: 2022,
     doi: 'https://doi.org/10.1109/ISRITI56927.2022.10052861',
-      link: 'https://ieeexplore.ieee.org/document/10052861/',
-
+    link: 'https://ieeexplore.ieee.org/document/10052861/',
+    citations: 13,
     finding:
       'A stacking ensemble with a Random Forest meta-learner, tuned via PSO, improved cost estimation accuracy over individual base learners on the ISBSG dataset.',
   },
@@ -39,6 +40,7 @@ export const publications: Publication[] = [
     year: 2022,
     doi: 'https://doi.org/10.1109/ICCITM56309.2022.10032008',
     link: 'https://ieeexplore.ieee.org/document/10032008/',
+    citations: 6,
     finding:
       'A survey of recent ML approaches to software cost estimation, contrasting where each family performs best and outlining open challenges.',
   },
