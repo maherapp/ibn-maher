@@ -1,14 +1,80 @@
 ---
 import BaseLayout from '@layouts/base-layout.astro'
+import Link from '@assets/link.svg'
+import { publications } from '../data/publications'
 ---
 
 <BaseLayout>
-  <p class='text-base font-extralight leading-6'>
-    Hello there, I'm Mohammed. I'm a <b class='font-medium'>lecturer</b> at the <b
-      class='font-medium'>University of Mosul</b
-    > where I give lectures on objected oriented programming to the undergraduates
-    at the department of <b class='font-medium'>software engineering</b>, and a
-    software engineer at <b class='font-medium'>Falaq</b> where I mostly work on building
-    web applications using React, Electron, and NodeJS.
-  </p>
+  <div class='flex flex-col gap-6'>
+    <section>
+      <h3 class='font-light mb-3'>
+        Hello, I am Mohammed and I work on ML for software engineering.
+      </h3>
+      <ul class='list-["-_"] list-outside font-light ml-3'>
+        <li>Email: maher@uomosul.edu.iq</li>
+        <li>
+          <a href='#' class='inline-flex gap-1 items-center'
+            >CV [PDF] <Link /></a
+          >
+        </li>
+        <li>
+          <a
+            href='https://github.com/maherapp'
+            class='inline-flex gap-1 items-center'
+            target='_blank'>Github <Link /></a
+          >
+        </li>
+        <li>
+          <a
+            href='https://scholar.google.com/citations?user=rg07F78AAAAJ'
+            class='inline-flex gap-1 items-center'
+            target='_blank'>Google Scholar <Link /></a
+          >
+        </li>
+        <li>
+          <a
+            href='https://www.linkedin.com/in/maherapp/'
+            class='inline-flex gap-1 items-center'
+            target='_blank'>LinkedIn <Link /></a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3 class='font-medium mb-3'>About</h3>
+      <p class='text-base font-light leading-6'>
+        Assistant lecturer at the University of Mosul. I work on empirical
+        software engineering analytics and I use ML on software repositories to
+        answer engineering questions. I have grown an interest in the
+        application of IR to empirical software engineering. At the moment I am
+        applying for a Fall PhD in Canada with HCED funding.
+      </p>
+    </section>
+    <section>
+      <h3 class='font-medium mb-3'>Research Interests</h3>
+      <ul class='list-["-_"] list-outside ml-3 font-light'>
+        <li>Retrieval-augmented tools for software engineers.</li>
+        <li>Effort and cost prediction using historical software data.</li>
+        <li>Mining software repositories.</li>
+      </ul>
+    </section>
+    <section id='publications'>
+      <h3 class='font-medium mb-3'>Publications</h3>
+      <ul class='list-["-_"] list-outside ml-3 font-light flex flex-col gap-2'>
+        {
+          publications.map((pub) => (
+            <li>
+              <a href={pub.pdf} class='border-b'>
+                {pub.title}
+              </a>
+              . <em>{pub.venue}</em>, {pub.year}.
+            </li>
+          ))
+        }
+      </ul>
+      <a href='/publications' class='inline-block mt-3 text-sm border-b'
+        >More details →</a
+      >
+    </section>
+  </div>
 </BaseLayout>

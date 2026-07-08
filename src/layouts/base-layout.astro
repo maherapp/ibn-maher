@@ -20,7 +20,7 @@ const { pageTitle = 'Ibn Maher' } = Astro.props
     <title>{pageTitle}</title>
   </head>
   <body class='h-full bg-gray-50'>
-    <div class='h-full flex flex-col justify-between p-6'>
+    <div class='h-full flex flex-col justify-between p-6 max-w-3xl mx-auto'>
       <div class='flex flex-col justify-start gap-6'>
         <Header />
         <main><slot /></main>
